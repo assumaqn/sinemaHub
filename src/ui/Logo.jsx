@@ -4,7 +4,9 @@ function Logo() {
   return (
     <div>
       <Link to="/">
-        <h2>🎬SinemaHub</h2>
+        <h2 className="text-lg font-semibold text-stone-100 capitalize">
+          🎬 SinemaHub
+        </h2>
       </Link>
     </div>
   );
