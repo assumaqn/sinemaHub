@@ -1,8 +1,12 @@
+import Features from "./Features";
+import Hero from "./Hero";
+
 function HomePage() {
   return (
-    <div className="text-center text-xl font-bold mt-5 text-stone-100 capitalize">
-      this is the home page not yet finished
-    </div>
+    <section className="text-center text-xl font-bold  text-stone-100 capitalize">
+      <Hero />
+      <Features />
+    </section>
   );
 }
 

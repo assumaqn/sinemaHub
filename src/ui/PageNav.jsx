@@ -2,7 +2,7 @@ import Logo from "./Logo";
 
 function PageNav() {
   return (
-    <header className=" flex items-center justify-between py-2 px-10 h-[80px] border-b border-gray-700">
+    <header className=" flex items-center justify-between py-2 px-40  h-[80px] border-b border-gray-700 ">
       <Logo />
       <div>
         <input

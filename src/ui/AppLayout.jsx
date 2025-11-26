@@ -4,7 +4,7 @@ import PageNav from "./PageNav";
 
 function AppLayout() {
   return (
-    <section className="h-screen grid grid-rows-[auto_1fr_auto] bg-gray-950/100 ">
+    <section className="h-screen grid grid-rows-[auto_2fr_auto] bg-gray-950/100 overflow-y-scroll ">
       <PageNav />
       <main>{<Outlet />}</main>
       <Footer />
