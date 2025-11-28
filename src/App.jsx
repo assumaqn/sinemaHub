@@ -3,7 +3,7 @@ import AppLayout from "./ui/AppLayout";
 import HomePage from "./features/home/HomePage";
 import MovieResult from "./features/result/MovieResult";
 import { loader as moviesLoader } from "./features/result/ResultContent";
-
+import Error from "./ui/Error";
 function App() {
   const router = createBrowserRouter([
     {
@@ -17,6 +17,7 @@ function App() {
           path: "/search",
           element: <MovieResult />,
           loader: moviesLoader,
+          errorElement: <Error />,
         },
       ],
     },
