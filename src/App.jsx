@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AppLayout from "./ui/AppLayout";
 import HomePage from "./features/home/HomePage";
 import MovieResult from "./features/result/MovieResult";
+import { loader as moviesLoader } from "./features/result/ResultContent";
 
 function App() {
   const router = createBrowserRouter([
@@ -15,6 +16,7 @@ function App() {
         {
           path: "/search",
           element: <MovieResult />,
+          loader: moviesLoader,
         },
       ],
     },

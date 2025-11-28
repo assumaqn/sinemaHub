@@ -6,4 +6,78 @@
   .input {
     @apply placeholder:text-sm w-96 py-3 px-4 rounded-lg bg-stone-900/100  text-stone-100 font-normal text-sm focus:outline-none  transition-all duration-100 focus:ring-1 focus:ring-amber-400  focus:ring-offset-stone-900;
   }
+  .reel-loader {
+    display: flex;
+    justify-content: center;
+    margin: 30px auto;
+  }
+
+  .reel-circle {
+    width: 55px;
+    height: 55px;
+    background: #000;
+    border-radius: 50%;
+    position: relative;
+
+    /* spin + pulse */
+    animation:
+      spin 1.2s linear infinite,
+      pulse 1s ease-in-out infinite;
+  }
+
+  /* Reel holes */
+  .reel-circle span {
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .reel-circle span:nth-child(1) {
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .reel-circle span:nth-child(2) {
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .reel-circle span:nth-child(3) {
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .reel-circle span:nth-child(4) {
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /* spinning */
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* pulsing */
+  @keyframes pulse {
+    0% {
+      scale: 1;
+      opacity: 0.85;
+    }
+    50% {
+      scale: 1.12;
+      opacity: 1;
+    }
+    100% {
+      scale: 1;
+      opacity: 0.85;
+    }
+  }
 }
