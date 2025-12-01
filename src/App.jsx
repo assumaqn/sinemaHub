@@ -12,9 +12,10 @@ function App() {
         {
           path: "/",
           element: <HomePage />,
+          errorElement: <Error />,
         },
         {
-          path: "/search",
+          path: "/search/:query",
           element: <MovieResult />,
           loader: moviesLoader,
           errorElement: <Error />,

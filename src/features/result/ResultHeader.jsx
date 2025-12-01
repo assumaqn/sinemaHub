@@ -1,5 +1,10 @@
+import { useLoaderData, useParams } from "react-router";
 import Button from "../../ui/Button";
 function ResultHeader() {
+  const movies = useLoaderData();
+  // const search = movies.Search.length;
+  const search = 10;
+  const { query } = useParams();
   return (
     <div className="py-5 ">
       <div className="grid grid-rows-2 items-center justify-center  gap-y-3 py-6   ">
@@ -14,7 +19,7 @@ function ResultHeader() {
         </div>
       </div>
       <p className="justify-items-start pl-10 text-stone-300 text-sm">
-        Found 209 result for "pand"
+        Found {search} result for "{query}"
       </p>
     </div>
   );

@@ -1,9 +1,15 @@
-const url = "http://www.omdbapi.com/?apikey=6b02aa70&s=panda";
+export async function getMovie(query) {
+  const res = await fetch(`http://www.omdbapi.com/?apikey=6b02aa70&s=${query}`);
 
-export async function getMovie() {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error("Failed To Get Movie ");
+  if (!res.ok) {
+    throw new Error("Network error. Please check your connection.");
+  }
+
   const data = await res.json();
+
+  if (data.Response === "False") {
+    throw new Error(data.Error || "Movie not found");
+  }
 
   return data;
 }

@@ -14,15 +14,16 @@ function ResultContent() {
           image={movie.Poster}
           year={movie.Year}
           genre={movie.Type}
-          key={movie.id}
+          key={movie.imdbID}
         />
       ))}
     </div>
   );
 }
 
-export async function loader() {
-  const movies = await getMovie();
+export async function loader({ params }) {
+  const movies = await getMovie(params.query);
+
   return movies;
 }
 
