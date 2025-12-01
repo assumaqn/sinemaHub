@@ -1,17 +1,17 @@
-import { useState } from "react";
-import Button from "../../ui/Button";
-import { useNavigate } from "react-router";
+import SearchQuery from "../../ui/SearchQuery";
+import { useSearch } from "../../Services/SearchContext";
 
 function Hero() {
-  const [query, setQuery] = useState("");
-  const navigation = useNavigate();
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log(query);
-    if (!query) return;
-    navigation(`/search/${query}`);
-    setQuery("");
-  }
+  const { query, dispatch } = useSearch();
+
+  // const navigation = useNavigate();
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   console.log(query);
+  //   if (!query) return;
+  //   navigation(`/search/${query}`);
+  //   dispatch({ type: "search/Home", payload: "" });
+  // }
   return (
     <div className="bg-gradient-to-r from-stone-800/100 from-10%  via-yellow-600/30 via-40% to-stone-800/100 to-60% py-[280px] px-10 flex flex-col gap-10 h-[470px] items-center justify-center">
       <h1 className="text-6xl font-extrabold flex flex-col gap-2 items-center pt-32">
@@ -22,19 +22,22 @@ function Hero() {
         Search through millions of movies, TV series, and episodes. Find
         detailed information, ratings, and more.
       </p>
-      <form onSubmit={handleSubmit}>
+      <SearchQuery
+        searchType="normal"
+        dispatch={dispatch}
+        query={query}
+        to={`${query}`}
+        type="primary"
+      />
+
+      {/* <form onSubmit={handleSubmit}>
         <div className="flex gap-2 items-center justify-center my-10 ">
-          <input
-            type="search"
-            placeholder="search for movies,series,episodes.."
-            className="input"
-            onChange={(e) => setQuery(e.target.value)}
-          />
+          <SearchQuery searchType="normal" dispatch={dispatch} />
           <Button to={`${query}`} type="primary">
             Search
           </Button>
         </div>
-      </form>
+      </form> */}
     </div>
   );
 }

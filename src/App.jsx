@@ -4,6 +4,7 @@ import HomePage from "./features/home/HomePage";
 import MovieResult from "./features/result/MovieResult";
 import { loader as moviesLoader } from "./features/result/ResultContent";
 import Error from "./ui/Error";
+import { SearchProvider } from "./Services/SearchContext";
 function App() {
   const router = createBrowserRouter([
     {
