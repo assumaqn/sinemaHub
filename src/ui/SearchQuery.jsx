@@ -8,7 +8,8 @@ function SearchQuery({ searchType, placeholder, dispatch, query, type, to }) {
     console.log(query);
     if (!query) return;
     navigation(`/search/${query}`);
-    dispatch({ type: "search/Home", payload: "" });
+    dispatch({ type: "searchMovie", payload: "" });
+    dispatch({ type: "searchNav", payload: "" });
   }
   const style = {
     headerSearch:
@@ -19,15 +20,18 @@ function SearchQuery({ searchType, placeholder, dispatch, query, type, to }) {
 
   if (searchType == "headerSearch")
     return (
-      <form>
-        <input
-          type="search"
-          placeholder={`${placeholder ? placeholder : "search for movies,series,episodes.."}`}
-          className={`input ${style[searchType]}`}
-          onChange={(e) =>
-            dispatch({ type: "search/Home", payload: e.target.value })
-          }
-        />
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type="search"
+            placeholder={`${placeholder ? placeholder : "search for movies,series,episodes.."}`}
+            className={`input ${style[searchType]}`}
+            onChange={(e) =>
+              dispatch({ type: "searchNav", payload: e.target.value })
+            }
+          />
+          <button type="hidden"></button>
+        </div>
       </form>
     );
   return (
@@ -44,10 +48,10 @@ function SearchQuery({ searchType, placeholder, dispatch, query, type, to }) {
           placeholder={`${placeholder ? placeholder : "search for movies,series,episodes.."}`}
           className={`input ${style[searchType]}`}
           onChange={(e) =>
-            dispatch({ type: "search/Home", payload: e.target.value })
+            dispatch({ type: "searchMovie", payload: e.target.value })
           }
         />
-        <Button to={`${query}`} type={type}>
+        <Button to={`/search/${query}`} type={type}>
           Search
         </Button>
       </div>

@@ -8,12 +8,12 @@ const initalState = {
 
 function reducer(state, action) {
   switch (action.type) {
-    case "search/Home":
+    case "searchMovie":
       return { query: action.payload };
-    case "search/Nav":
+    case "searchNav":
       return { query: action.payload };
-    case "search/Result":
-      return { query: action.payload };
+    default:
+      throw new Error("Unknown command");
   }
 }
 function SearchProvider({ children }) {

@@ -18,7 +18,9 @@ function Error() {
         <p className="text-sm text-stone-400 capitalize">
           {error.message || error.data}
         </p>
-        <Button type="small">Back to Home</Button>
+        <Button to="/" type="small">
+          Back to Home
+        </Button>
       </div>
     </div>
   );

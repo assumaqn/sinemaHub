@@ -12,15 +12,7 @@ function AppLayout() {
   return (
     <section className="h-screen grid grid-rows-[auto_2fr_auto] bg-gray-950/100 overflow-y-scroll ">
       <PageNav />
-      <main>
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <SearchProvider>
-            <Outlet />
-          </SearchProvider>
-        )}
-      </main>
+      <main>{isLoading ? <Loader /> : <Outlet />}</main>
       <Footer />
     </section>
   );
