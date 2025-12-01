@@ -12,6 +12,8 @@ function reducer(state, action) {
       return { query: action.payload };
     case "searchNav":
       return { query: action.payload };
+    case "searchResult":
+      return { query: "" };
     default:
       throw new Error("Unknown command");
   }

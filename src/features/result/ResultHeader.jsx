@@ -10,8 +10,8 @@ function ResultHeader() {
 
   const { query } = useParams();
   return (
-    <div className="py-5 ">
-      <div className="grid grid-rows-2 items-center justify-center  gap-y-3 py-6   ">
+    <div className="py-5 mx-auto">
+      <div className="grid grid-rows-2 items-center justify-center   gap-y-3 py-6   ">
         <h3 className="text-2xl text-stone-200 font-semibold">Search Result</h3>
 
         <SearchQuery
@@ -20,14 +20,8 @@ function ResultHeader() {
           query={searchQuery}
           type="small"
         />
-
-        {/* <div className="flex items-center justify-center gap-3 ">
-          <SearchQuery searchType="resultSearch" />
-
-          <Button type="small">Search</Button>
-        </div> */}
       </div>
-      <p className="justify-items-start pl-10 text-stone-300 text-sm">
+      <p className="justify-items-start pl-5 sm:pl-10 text-stone-300 text-sm">
         Found {search} result for "{query}"
       </p>
     </div>

@@ -4,7 +4,9 @@ import { BsFillLightningFill } from "react-icons/bs";
 import { BsStars } from "react-icons/bs";
 function Features() {
   return (
-    <div className="flex max-w-4xl space-x-10 justify-between items-center mx-auto py-[156px]">
+    // <div className="flex flex-col sm:flex-row max-w-xs  sm:max-w-4xl  space-y-14 sm:space-x-10 justify-between items-center mx-auto py-[156px]">
+
+    <div className="flex flex-col max-w-xs sm:flex-row sm:max-w-4xl space-y-14 sm:space-y-0 sm:space-x-10 justify-between items-center mx-auto py-[156px]">
       <FeaturedCard
         icon={
           <MdLocalMovies className="text-amber-600 text-5xl bg-amber-200/20 w-12 h-12 rounded-full p-3" />

@@ -5,17 +5,16 @@ function SearchQuery({ searchType, placeholder, dispatch, query, type, to }) {
   const navigation = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(query);
+
     if (!query) return;
     navigation(`/search/${query}`);
-    dispatch({ type: "searchMovie", payload: "" });
-    dispatch({ type: "searchNav", payload: "" });
+    dispatch({ type: "searchResult" });
   }
   const style = {
     headerSearch:
-      " w-[150px] py-1 px-4 focus:w-52 transition-all duration-200 ",
+      "w-[150px] py-1 px-4 focus:w-40 sm:focus:w-52 transition-all duration-200 ",
     normalSearch: "",
-    resultSearch: " w-[550px] py-2",
+    resultSearch: " w-[280px] sm:w-[550px] py-2",
   };
 
   if (searchType == "headerSearch")

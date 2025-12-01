@@ -10,7 +10,8 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
 
   return (
-    <section className="h-screen grid grid-rows-[auto_2fr_auto] bg-gray-950/100 overflow-y-scroll ">
+    // <section className=" items-center justify-center h-screen grid grid-rows-[auto_2fr_auto] bg-gray-950/100 overflow-y-scroll max-w-md overflow-x-hidden  mx-auto  ">
+    <section className="h-screen grid grid-rows-[auto_2fr_auto] bg-gray-950/100 overflow-y-scroll sm:justify-normal justify-center overflow-x-hidden ">
       <PageNav />
       <main>{isLoading ? <Loader /> : <Outlet />}</main>
       <Footer />

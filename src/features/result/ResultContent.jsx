@@ -7,7 +7,7 @@ function ResultContent() {
   const { Search } = movies;
 
   return (
-    <div className="max-w-7xl mx-auto py-7 grid grid-cols-5 items-center justify-between gap-x-8 gap-y-10 ">
+    <div className="sm:max-w-7xl max-w-lg mx-auto py-7 grid sm:grid-cols-5 grid-cols-2 items-center justify-between gap-x-8 gap-y-10 ">
       {Search.map((movie) => (
         <MovieCard
           title={movie.Title}
